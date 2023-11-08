@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Index</title>
 </head>
 <body>
-    
+    <div>
+        <button class="timerChoice" data-time="22620">Star Wars Original Trilogy</button>
+        <button class="timerChoice" data-time="1405">Speedrun Zelda: Breath Of The Wild</button>
+        <button class="timerChoice" data-time="387,6">Paradise City</button>
+        <button class="timerChoice" data-time="2700">Symphonie n°9 de Dvořák</button>
+        <form id="customTimer">
+            <input type="text" id="custom" placeholder="Enter minutes/seconds">
+        </form>
+    </div>
+    <div id="display">
+        <h1 id="timeLeft"></h1>
+        <p id="timeEnd"></p>
+    </div>
 </body>
+<script src="./script.js"></script>
 </html>

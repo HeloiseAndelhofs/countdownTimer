@@ -1,14 +1,26 @@
-const timerChoice = document.querySelectorAll(".timerChoice");
+const timerChoices = document.querySelectorAll(".timerChoice");
 const customTimerInput = document.getElementById("custom");
-const timeLeft = document.getElementById("timeLeft");
-const timeEnd = document.getElementById("timeEnd");
+const timeLeftDisplay = document.getElementById("timeLeft");
+const timeEndDisplay = document.getElementById("timeEnd");
+
+const currentTime = new Date(Date.now()).toLocaleTimeString();
+console.log(currentTime);
+
+// const myInterval = setInterval(timer, 1000);
 
 // function timer(seconds) {
-//     timeLeft.innerHTML = ``
-// }
+//     const date = new Date();
+//     timeLeftDisplay.innerHTML = date.toLocaleTimeString()
+// };
 
-const theBigDay = new Date();
-theBigDay.setSeconds(30);
-console.log(theBigDay);
+// clearInterval(myInterval);
 
-// timerChoice.addEventListener("click", timer)
+
+// timerChoice.addEventListener("click", timer);
+
+function log() {
+    console.log("bouton");
+}
+
+
+timerChoices.addEventListener("click", log);

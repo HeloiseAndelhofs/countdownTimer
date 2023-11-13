@@ -1,12 +1,30 @@
-const timerChoices = document.querySelectorAll(".timerChoice");
-const customTimerInput = document.getElementById("custom");
+// const timerChoices = document.querySelectorAll(".timerChoice");
+// const customTimerInput = document.getElementById("custom");
 const timeLeftDisplay = document.getElementById("timeLeft");
 const timeEndDisplay = document.getElementById("timeEnd");
+const stopTimer = document.getElementById("stop");
 
-const currentTime = new Date(Date.now()).toLocaleTimeString();
-console.log(currentTime);
+// const currentTime = new Date(Date.now()).toLocaleTimeString();
+// console.log(currentTime);
 
-// const myInterval = setInterval(timer, 1000);
+const timerChoices = 22620000;
+const arrivedTime = new Date(Date.now() + timerChoices);
+let x = setInterval(function log() {
+    const customTimerInput = 390000;
+    
+    const arrivedTimeCustom = new Date(Date.now() + customTimerInput);
+    
+    
+    const distance = arrivedTime - Date.now();
+    console.log(distance);
+    timeLeftDisplay.innerHTML = distance;
+    // console.log(arrivedTime);
+}, 1000);
+
+function stopCounter(){
+    clearInterval(x);
+}
+
 
 // function timer(seconds) {
 //     const date = new Date();
@@ -18,9 +36,10 @@ console.log(currentTime);
 
 // timerChoice.addEventListener("click", timer);
 
-function log() {
-    console.log("bouton");
-}
 
 
-timerChoices.addEventListener("click", log);
+
+// timerChoices.addEventListener("click", log);
+
+
+stopTimer.addEventListener("click", stopCounter)

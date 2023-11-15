@@ -11,10 +11,11 @@ let x; // paramètre de clear interval
 // reutilisable pour formater la date de millisecondes en hh:mm:ss
 function formatedDate(distance){
 
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const hours = Math.round((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.round((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.round((distance % (1000 * 60)) / 1000);
     
+    console.log(distance);
 
     timeLeftDisplay.innerHTML = hours + "h "
     + minutes + "m " + seconds + "s ";
@@ -31,9 +32,13 @@ function countdownTimer(time){
                 
         const distance = arrivedTime - Date.now();
     
+
+
         formatedDate(distance)
     
     }, 1000);
+
+    timeEndDisplay.innerHTML = `Timer will end at ${arrivedTime.getHours().toString().padStart(2, "0")}:${arrivedTime.getMinutes().toString().padStart(2, "0")}`;
 };
 
 
@@ -60,13 +65,13 @@ document.getElementById("customTimer").addEventListener("submit", (event) => {
 
     const arrivedTime = new Date(Date.now() + inputMilliseconds);
     
-    x = setInterval(() => {
+    // x = setInterval(() => {
         const distance = arrivedTime - Date.now();
         
         
-formatedDate(distance)
+    formatedDate(distance)
         
-    }, 1000)
+    // }, 1000)
 
     timeEndDisplay.innerHTML = `Timer will end at ${arrivedTime.getHours().toString().padStart(2, "0")}:${arrivedTime.getMinutes().toString().padStart(2, "0")}`;
 })

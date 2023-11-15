@@ -49,9 +49,10 @@ function stopCounter(){
 document.getElementById("customTimer").addEventListener("submit", (event) => {
 
     event.preventDefault()
-    document.getElementById("customTimer").reset();
-
+    
     let customTimerInput = document.getElementById("custom").value;
+    
+    document.getElementById("customTimer").reset();
 
     clearInterval(x);
 

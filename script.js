@@ -1,10 +1,16 @@
 const timerChoices = document.querySelectorAll(".timerChoice");
-const customTimerInput = document.getElementById("custom");
 const timeLeftDisplay = document.getElementById("timeLeft");
 const timeEndDisplay = document.getElementById("timeEnd");
 const stopTimer = document.getElementById("stop");
 
-console.log(customTimerInput);
+
+document.getElementById("formSubmit").addEventListener("click", (event) => {
+    event.preventDefault()
+    let customTimerInput = document.getElementById("custom").value;
+    console.log(customTimerInput);
+    document.getElementById("customTimer").reset();
+})
+
 
 let x;
 
@@ -18,9 +24,7 @@ function countdownTimer(time){
 
 
     x = setInterval(() => {
-        
-        // const arrivedTimeCustom = new Date(Date.now() + customTimerInput);
-        
+                
         
         const distance = arrivedTime - Date.now();
     
@@ -41,7 +45,6 @@ function countdownTimer(time){
 
 function stopCounter(){
     clearInterval(x);
-    x = null;
 };
 
 timerChoices.forEach((el) => {
